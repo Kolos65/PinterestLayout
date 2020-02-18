@@ -55,13 +55,13 @@ override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewL
 ```
 ## Extensibility
 The supplementary cache is a dictionary in which the key should be the `elementKind` property of supplementary views. With the extension of the layout, other supplementary views could be added easily by the modification of only the prepare method. You just have to:
-1) **Calculate the frames of the new supplementary view**
-2) **Create the layout attribute for the supplementary viewv
-3) **Set the calculated frame on the attribute**
-4) **Update the supplementaryCache with the new attribute**
-5) **Update the contentBounds property to keep track of the content size**
-6) **Update the yOffsets vector so the next cell continues from the correct y coordinate**
-7) **Keep track of the supplementary view's index**
+1) **Calculate the frames** of the new supplementary view
+2) **Create** the layout **attribute** for the supplementary view
+3) **Set** the calculated **frame** on the attribute
+4) **Update the supplementaryCache** with the new attribute
+5) **Update the contentBounds** property to keep track of the content size
+6) **Update the yOffsets** vector so the next cell continues from the correct y coordinate
+7) **Keep track of** the supplementary view's **index**
 
 ```swift
 // The layout of the banner:
