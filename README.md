@@ -77,13 +77,14 @@ if itemIndex % adFrequency == 0 {
     
     // 2
     let attributes = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind:
-                                                Self.elementKindBanner, with: indexPath)
+                                                      Self.elementKindBanner, with: indexPath)
                                                 
     // 3
     attributes.frame = insetFrame
     
     // 4
-    supplementaryCache.updateCollection(keyedBy: PinterestLayout.elementKindBanner, with: attributes)
+    supplementaryCache.updateCollection(keyedBy: PinterestLayout.elementKindBanner, 
+                                        with: attributes)
     
     // 5
     contentBounds = contentBounds.union(frame)
@@ -98,6 +99,7 @@ if itemIndex % adFrequency == 0 {
 ## Dictionary extension
 The layout uses a simple dictionary extension for the supplementary cache update. The method called `updateCollection(keyedBy:with:)`  enables you to update a dictionary's collection value with a new element, even if it is the first one. It's very simple, but saves you some code and shows the power of POP.
 
+```swift
 extension Dictionary where Value: RangeReplaceableCollection {
     mutating func updateCollection(keyedBy key: Key, with element: Value.Element) {
         if var collection = self[key] {
@@ -110,3 +112,4 @@ extension Dictionary where Value: RangeReplaceableCollection {
         }
     }
 }
+```
