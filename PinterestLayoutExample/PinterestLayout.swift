@@ -53,7 +53,7 @@ class PinterestLayout: UICollectionViewLayout {
     // MARK: Public Variables
     var cellPadding: CGFloat = 6 {
         didSet {
-            if oldValue == cellPadding { invalidateLayout() }
+            if oldValue != cellPadding { invalidateLayout() }
         }
     }
     
