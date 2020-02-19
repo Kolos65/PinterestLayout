@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         
         pinterestLayout.delegate = self
         pinterestLayout.numberOfColumns = 2
-        pinterestLayout.cellPadding = 0
+        pinterestLayout.cellPadding = 6
         
     }
 }
