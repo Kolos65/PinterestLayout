@@ -104,14 +104,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
      func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == PinterestLayout.elementKindBanner {
+        switch kind {
+        case PinterestLayout.elementKindBanner:
             let dequeuedBanner = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: Constants.bannerID, for: indexPath) as? BannerView
             let cell = dequeuedBanner ?? BannerView()
             cell.imageView.image = UIImage(named: "testAd")
             return cell
+        default:
+            fatalError()
         }
-           fatalError()
-       }
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y + scrollView.contentInset.top
