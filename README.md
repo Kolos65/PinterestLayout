@@ -1,5 +1,5 @@
 # Pinterest Layout
-A custom UICollectionViewLayout subclass that implements a layout used in the Pinterest app. The layout supports the placement of banners that are full sized cells "braking" the waterfall layout.
+A custom UICollectionViewLayout subclass that implements a layout used in the Pinterest app. The layout supports the placement of banners that are full sized cells "breaking" the waterfall layout.
 
 <p align="center">
 <img src="demo.gif">
